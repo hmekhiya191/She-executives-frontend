@@ -4,11 +4,21 @@ import { gsap } from "gsap";
 import ScrollReveal from "@/components/ui/ScrollReveal.tsx";
 import StatCounter from "@/components/ui/StatCounter";
 
-import img1 from "@/assets/hero1.png";
-import img2 from "@/assets/hero2.png";
+import img1 from "@/assets/hero1.jpg";
+import img2 from "@/assets/hero2.jpg";
 import img3 from "@/assets/hero3.png";
-import img4 from "@/assets/hero4.png";
-import img5 from "@/assets/hero5.png";
+import img4 from "@/assets/hero4.jpg";
+import img5 from "@/assets/hero5.jpg";
+
+import { Link } from "react-router-dom";
+import { Award, TrendingUp, Shield, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+// import your images (VERY IMPORTANT)
+import executivePlacement from "@/assets/executive-placement.jpg";
+import directHire from "@/assets/direct-hire.jpg";
+import hrConsulting from "@/assets/hr-consulting.jpg";
+import MissionSection from "./MissionSection";
 
 const images = [img1, img2, img3, img4, img5];
 
@@ -106,13 +116,11 @@ return (
       </div>
 
       {/* Marquee */}
-      <div className="absolute bottom-0 left-0 right-0 bg-[#0a1428]/60 backdrop-blur-md py-4 overflow-hidden">
+      {/* Trusted By marquee */}
+      <div className="absolute bottom-0 left-0 right-0 bg-navy-deep/80 backdrop-blur-sm py-4 overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">
-          {[
-            "Fortune 500 Ready","✦","DEIB Strategy","✦","Executive Search","✦",
-            "HR Consulting","✦","Talent Pipeline","✦","Leadership Development","✦"
-          ].map((item, i) => (
-            <span key={i} className="mx-6 text-xs tracking-[3px] uppercase text-white/50">
+          {["Fortune 500 Ready", "✦", "DEIB Strategy", "✦", "Executive Search", "✦", "HR Consulting", "✦", "Talent Pipeline", "✦", "Leadership Development", "✦", "Fortune 500 Ready", "✦", "DEIB Strategy", "✦", "Executive Search", "✦", "HR Consulting", "✦", "Talent Pipeline", "✦", "Leadership Development", "✦"].map((item, i) => (
+            <span key={i} className="mx-4 text-xs font-medium tracking-[3px] uppercase text-baby-blue/50">
               {item}
             </span>
           ))}
@@ -149,29 +157,100 @@ return (
   </div>
 </section>
 
-    {/* MISSION */}
-{/* MISSION */}
-<section className="py-24 bg-[#f8f5f0]">
+      {/* MISSION */}
+      <section className="py-24 bg-[#f8f5f0]">
 
-  <div className="max-w-3xl mx-auto px-6 text-center">
+        <div className="max-w-3xl mx-auto px-6 text-center">
 
- 
+      
 
-    <h2 className="font-poppins text-5xl md:text-5xl font-semibold text-[#1a1a1a] mb-6 leading-tight">
-      Successful High Earners
-    </h2>
-       {/* premium divider */}
-    <div className="w-20 h-[2px] mx-auto mb-8 bg-gradient-to-r from-transparent via-[#c9a96e] to-transparent"></div>
+          <h2 className="font-poppins text-5xl md:text-5xl font-semibold text-[#1a1a1a] mb-6 leading-tight">
+            Successful High Earners
+          </h2>
+            {/* premium divider */}
+          <div className="w-20 h-[2px] mx-auto mb-8 bg-gradient-to-r from-transparent via-[#5fd3ff] to-transparent"></div>
 
-    <p className="text-lg text-[#555] leading-relaxed">
-      SHE Executives redefines HR by championing DEI, wage gap negotiation, and compliance.
-      Nearly a decade of results partnering with Fortune 400 firms, business owners, and small businesses
-      as their trusted HR extension.
-    </p>
+          <p className="text-lg text-[#555] leading-relaxed">
+            SHE Executives redefines HR by championing DEI, wage gap negotiation, and compliance.
+            Nearly a decade of results partnering with Fortune 400 firms, business owners, and small businesses
+            as their trusted HR extension.
+          </p>
 
-  </div>
+        </div>
 
-</section>
+      </section>
+
+      {/* Mission section */}
+      <MissionSection />
+
+      {/* Services Preview */}
+      <section className="section-padding bg-background">
+        <div className="max-w-7xl mx-auto">
+          <ScrollReveal>
+            <div className="text-center mb-16">
+              <p className="font-body text-sm tracking-[0.3em] uppercase text-accent mb-4">Our Lines of Business</p>
+              <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">
+                Three Ways We Serve
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                image: executivePlacement,
+                icon: <Award size={28} />,
+                title: "Executive Placement",
+                desc: "Women leadership for progressive companies. Fortune 400 partnerships, DEI-focused recruiting, and negotiation advocacy.",
+              },
+              {
+                image: directHire,
+                icon: <TrendingUp size={28} />,
+                title: "Direct Hire Roles",
+                desc: "Permanent growth positions matched with intentional leaders. Building diverse teams that drive real business results.",
+              },
+              {
+                image: hrConsulting,
+                icon: <Shield size={28} />,
+                title: "HR Consulting",
+                desc: "Full-service HR from handbooks to mediation. Compliance, training, benefits administration, and strategic planning.",
+              },
+            ].map((service, i) => (
+              <ScrollReveal key={service.title} delay={i * 0.15}>
+                <Link to="/services" className="group block">
+                  <div className="relative overflow-hidden rounded-lg mb-6">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                   <div className="absolute inset-0 bg-blue-900/30 group-hover:bg-blue-900/20 transition-colors duration-500" />
+                    <div className="absolute bottom-4 left-4 text-accent">
+                      {service.icon}
+                    </div>
+                  </div>
+                  <h3 className="font-display text-xl font-semibold text-foreground mb-2 group-hover:text-teal-medium transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                    {service.desc}
+                  </p>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal>
+            <div className="text-center mt-12">
+              <Button variant="default" size="lg" asChild>
+                <Link to="/services">
+                  Explore All Services <ArrowRight size={16} />
+                </Link>
+              </Button>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
   </>
 );
 };

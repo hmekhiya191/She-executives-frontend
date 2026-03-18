@@ -10,9 +10,9 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
-      <MissionSection />
-      <ServicesSection />
-      <ELearningSection />
+      {/* <MissionSection /> */}
+      {/* <ServicesSection /> */}
+      {/* <ELearningSection /> */}
       <FooterSection />
     </div>
   );

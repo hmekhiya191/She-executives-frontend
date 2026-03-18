@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
+import { Briefcase, Crown, BarChart3, Handshake } from "lucide-react";
 
 const stats = [
-  { number: "15+", label: "Years in HR & Recruiting", emoji: "💼" },
-  { number: "500+", label: "Women Placed in Leadership", emoji: "👑" },
-  { number: "40%", label: "More Diverse Candidate Slates", emoji: "📊" },
-  { number: "98%", label: "Client Retention Rate", emoji: "🤝" },
+  { number: "15+", label: "Years in HR & Recruiting", icon: Briefcase },
+  { number: "500+", label: "Women Placed in Leadership", icon: Crown },
+  { number: "40%", label: "More Diverse Candidate Slates", icon: BarChart3 },
+  { number: "98%", label: "Client Retention Rate", icon: Handshake },
 ];
 
 const MissionSection = () => {
@@ -28,7 +29,7 @@ const MissionSection = () => {
               <span className="italic text-primary">One New-Hire at a Time</span>
             </h2>
             <p className="text-base leading-relaxed text-baby-blue/70 mb-6">
-              She Executives doesn't simply fill positions — we create workplace solutions by placing, searching for, and supporting powerful women and men who embrace creativity through diversity. With empathy for the industries we serve, we lead the evolution of how women are represented in every company in the world.
+              She Executives doesn't simply fill positions. we create workplace solutions by placing, searching for, and supporting powerful women and men who embrace creativity through diversity. With empathy for the industries we serve, we lead the evolution of how women are represented in every company in the world.
             </p>
             <p className="text-base leading-relaxed text-baby-blue/70">
               Founded by Priscilla Anderson, a 15+ year HR veteran who has partnered with Fortune 500 manufacturers, consumer goods companies, and supply chain leaders, She Executives is driven by a single passion: helping women take their rightful place in leadership roles while helping client companies prosper through inclusion.
@@ -51,9 +52,15 @@ const MissionSection = () => {
                 transition={{ delay: 0.3 + i * 0.1 }}
                 className="glass-card rounded-2xl p-6 text-center hover:scale-105 transition-transform cursor-default"
               >
-                <span className="text-3xl mb-2 block">{stat.emoji}</span>
-                <span className="font-display text-3xl md:text-4xl font-bold text-primary block mb-1">{stat.number}</span>
-                <span className="text-xs text-baby-blue/60 leading-tight block">{stat.label}</span>
+                <stat.icon className="w-8 h-8 mx-auto mb-3 text-primary" />
+                
+                <span className="font-display text-3xl md:text-4xl font-bold text-primary block mb-1">
+                  {stat.number}
+                </span>
+
+                <span className="text-xs text-baby-blue/60 leading-tight block">
+                  {stat.label}
+                </span>
               </motion.div>
             ))}
           </motion.div>
