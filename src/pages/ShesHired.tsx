@@ -129,17 +129,17 @@ const ShesHired = () => {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <span className="text-sm uppercase tracking-[0.3em] text-baby-blue font-semibold">
+            {/* <span className="text-sm uppercase tracking-[0.3em] text-baby-blue font-semibold">
               Campaign 2026
-            </span>
+            </span> */}
 
             <h1 className="font-display text-5xl md:text-7xl font-bold text-white mt-4 leading-tight">
               She's Hired
             </h1>
 
-            <p className="font-display text-2xl md:text-3xl text-accent italic mt-2">
-              100 Women. 120 Days. One Movement.
-            </p>
+            {/* <p className="font-display text-2xl md:text-3xl text-accent italic mt-2">
+              One Movement
+            </p> */}
 
             <p className="mt-6 text-lg text-baby-blue/80 max-w-2xl leading-relaxed">
               Pledge to hire a Successful High Earner and join the companies
@@ -557,7 +557,7 @@ const ShesHired = () => {
       custom={1}
     >
       <p className="text-white/80 text-base md:text-lg leading-relaxed">
-        The She's Hired pin represents more than a campaign — it's a commitment.
+        The She's Hired pin represents more than a campaign. it's a commitment.
         Every pin worn is a signal to displaced professionals that they are
         <span className="text-white font-medium"> seen, valued, and worth investing in.</span>
       </p>
@@ -694,7 +694,7 @@ const ShesHired = () => {
           onSubmit={handlePledge}
         >
           <h3 className="font-display text-xl text-center font-semibold mb-6">
-            Pledge to Hire SHE
+            Take The Pledge
           </h3>
 
           <input

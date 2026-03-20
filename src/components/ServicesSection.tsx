@@ -18,7 +18,7 @@ import {
 import { Button } from "@/components/ui/button";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 
-import servicesPlacement from "@/assets/services-placement.jpg";
+import servicesPlacement from "@/assets/hero1.jpg";
 import servicesDirecthire from "@/assets/services-directhire.jpg";
 import servicesConsulting from "@/assets/services-consulting.jpg";
 import FooterSection from "./FooterSection";
