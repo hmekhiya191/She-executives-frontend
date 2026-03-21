@@ -22,6 +22,7 @@ const [pledge, setPledge] = useState("");
 const [company, setCompany] = useState("");
 const [attachment, setAttachment] = useState(null);
 const [resume, setResume] = useState(null);
+const [amount, setAmount] = useState("");
 
 const [loading, setLoading] = useState(false);
 const [success, setSuccess] = useState(false);
@@ -71,6 +72,7 @@ if (delay > 0) {
     formData.append("time", time);
     formData.append("pledge", pledge);
     formData.append("customSubject", customSubject);
+    formData.append("amount", amount);
     
 
     if (attachment) formData.append("attachment", attachment);
@@ -99,6 +101,7 @@ if (delay > 0) {
       setPledge("");
       setCustomSubject("");
       setFileName("");
+      setAmount("");
       setResumeName("");
       setAttachment(null);
       setResume(null);
@@ -507,8 +510,21 @@ if (delay > 0) {
           {/* 👇 SHOW ONLY WHEN SHE's HIRED */}
           {service === "She's Hired Campaign" && (
             <div className="space-y-4 animate-fadeIn">
-
-             
+              
+            {/* 💰 Donation Amount */}
+            <div>
+              <label className="text-sm text-gray-700 mb-2 block">
+                Share Your Support for She’s Hired Campaign. (USD)
+              </label>
+              <input
+                type="number"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+                placeholder="Enter amount (USD)"
+                className="w-full px-4 py-3 rounded-lg border border-sky-200 bg-white focus:ring-2 focus:ring-sky-400 outline-none transition"
+              />
+            </div>
+                        
 
               {/* Resume Upload */}
               <div>
