@@ -78,7 +78,7 @@ if (delay > 0) {
     if (attachment) formData.append("attachment", attachment);
     if (resume) formData.append("resume", resume);
 
-    const res = await fetch("http://localhost:5000/send-email", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/send-email`, {
       method: "POST",
       body: formData,
     });
