@@ -78,10 +78,10 @@ if (delay > 0) {
     if (attachment) formData.append("attachment", attachment);
     if (resume) formData.append("resume", resume);
 
-    const res = await fetch(`${import.meta.env.VITE_API_URL}/send-email`, {
-      method: "POST",
-      body: formData,
-    });
+const res = await fetch("https://she-executives-backend.onrender.com/send-email", {
+  method: "POST",
+  body: formData,
+});
 
     const result = await res.json();
 
