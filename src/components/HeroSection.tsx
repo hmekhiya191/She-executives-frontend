@@ -81,21 +81,29 @@ return (
       {/* Background */}
       <div className="absolute inset-0">
 
-        <div
-          ref={prevRef}
-          className={`absolute inset-0 bg-cover bg-[center_2%] ${
-            images[prev] === img3 ? "bg-[95%_center] md:bg-[center_2%]" : ""
-          }`}
-          style={{ backgroundImage: `url(${images[prev]})` }}
-        />
+<div
+  ref={prevRef}
+  className="absolute inset-0 bg-cover"
+  style={{
+    backgroundImage: `url(${images[prev]})`,
+    backgroundPosition:
+      images[prev] === img3
+        ? "80% center"   // 🔥 force right focus
+        : "center 2%",
+  }}
+/>
 
-        <div
-          ref={currentRef}
-          className={`absolute inset-0 bg-cover bg-[center_2%] ${
-            images[current] === img3 ? "bg-[95%_center] md:bg-[center_2%]" : ""
-          }`}
-          style={{ backgroundImage: `url(${images[current]})` }}
-        />
+<div
+  ref={currentRef}
+  className="absolute inset-0 bg-cover"
+  style={{
+    backgroundImage: `url(${images[current]})`,
+    backgroundPosition:
+      images[current] === img3
+        ? "80% center"   // 🔥 force right focus
+        : "center 2%",
+  }}
+/>
 
         <div className="absolute inset-0 bg-gradient-to-r from-[#0f203c]/55 via-[#123a5a]/45 to-[#1b2f55]/55" />
       </div>
